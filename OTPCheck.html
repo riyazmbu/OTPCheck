@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 300px;
+            width: 100%;
+        }
+
+        h1 {
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        #data {
+            width: 100%;
+            padding: 10px;
+            margin: 20px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        #result {
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Hi Shajahan Generate OTP</h1>
+    <button onclick="show()">Show</button>
+    <p id="demo"></p>
+    <input type='text' id='data' placeholder='Enter OTP' onchange='OTPCheck(this.value)' />
+    <p id="result"></p>
+</div>
+
+<script>
+let t = '';
+for(let i = 0; i < 4; i++) {
+    t += Math.floor(Math.random() * 10).toString();
+}
+
+function OTPCheck(data) {
+    if(data !== t) {
+        document.getElementById("result").innerHTML = "OTP Not match";
+        document.getElementById("result").style.color = "red";
+    } else {
+        document.getElementById("result").innerHTML = "OTP match";
+        document.getElementById("result").style.color = "green";
+    }
+}
+
+function show() {
+    document.getElementById("demo").innerHTML = t;
+}
+</script>
+
+</body>
+</html>

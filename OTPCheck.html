@@ -60,7 +60,7 @@
 <body>
 
 <div class="container">
-    <h1>Hi Shajahan Generate OTP</h1>
+    <h1>Hi Shajahan - Generate OTP</h1>
     <button onclick="show()">Show</button>
     <p id="demo"></p>
     <input type='text' id='data' placeholder='Enter OTP' onchange='OTPCheck(this.value)' />
@@ -80,6 +80,9 @@ function OTPCheck(data) {
     } else {
         document.getElementById("result").innerHTML = "OTP match";
         document.getElementById("result").style.color = "green";
+        setTimeout(() => {
+            window.location.href = "https://riyazmbu.github.io/Portfolio/portfolio.html"; // Replace with your desired URL
+        }, 3000);
     }
 }
 
